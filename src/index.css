@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.resturantinfo1,.resturantinfo {
+  transition: all 0.5s ease-in-out;
+  
+}
+.cardscrollitem{
+  transition: all 0.2s ease-in;
+  
+}
+.resturantinfo:hover{
+   scale: 0.9;
+}
+
+.filterbtn > button{
+  border-radius: 20px;
+  width: 130px;
+  height: 40px;
+   background-color: rgb(233, 230, 230);
+   border: solid 1px rgb(205, 203, 203);
+   margin-right: 10px;
+   
+}
+.filterbtn > input{
+  border-radius: 20px;
+
+  width: 200px;
+  height: 40px;
+  background-color: rgb(233, 230, 230);
+    padding-left: 15px;
+   margin-right: 10px;
+}
+.filterbtn button:hover{
+  background-color: rgb(191, 187, 187);
+
+}
+.home p,.company p,.social p{
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(207, 205, 215);
+}
+.topresinfo::-webkit-scrollbar,.cardscroll::-webkit-scrollbar {
+  width: 0;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .filterbtn{
+    display: flex;
+    overflow-y: hidden;
+  }
+  .filterbtn::-webkit-scrollbar{
+    width: 0;
+  }
+  .filterbtn > button{
+    border-radius: 20px;
+    width: 110px;
+    height: 35px;
+     background-color: rgb(233, 230, 230);
+     border: solid 1px rgb(205, 203, 203);
+     margin-right: 5px;
+     flex-shrink: 0;
+
+     
+  }
+  .filterbtn input{
+    height: 35px;
+  }
+}
