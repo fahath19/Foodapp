@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Api_Url } from '../../../constant';
+import { Api_Url } from '../utils/constant';
 import { api_url } from '../utils/constant';
 const Usefetchdata = () => {
      let [data,setdata]=useState('');
