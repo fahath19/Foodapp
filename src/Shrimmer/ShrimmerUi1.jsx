@@ -5,43 +5,43 @@ const ShrimmerUi1 = () => {
   return (
     <div className='max-w-[1200px] mx-auto mb-10'>
 
-    <div className='mt-10   flex justify-between '>
+<div className='mt-10   flex justify-between '>
 
-        <div>
-        <ShimmerTitle line={1} gap={20} variant="primary" className=' p-2 w-[300px]'  />
+<div>
+<ShimmerTitle line={1} gap={20} variant="primary" className=' p-2 md:w-[300px] w-[200px]'  />
 
-        </div>
-      <div className='flex gap-3'>
-      <ShimmerCircularImage size={50} />
-      <ShimmerCircularImage size={50} />
+</div>
+<div className='flex gap-3'>
+<ShimmerCircularImage size={50} />
+<ShimmerCircularImage size={50} />
 
-      </div>
+</div>
 
-    </div>
-     <div className='flex justify-between flex-wrap'>
-      <ShimmerCircularImage size={110} />
-      <ShimmerCircularImage size={110} />
-      <ShimmerCircularImage size={110} />
-      <ShimmerCircularImage size={110} />
-      <ShimmerCircularImage size={110}  className='hidden md:flex'/>
-      <ShimmerCircularImage size={110}  className='hidden md:flex'/>
-      <ShimmerCircularImage size={110}  className='hidden md:flex'/>
-      <ShimmerCircularImage size={110}  className='hidden md:flex' />
-      <ShimmerCircularImage size={110} className=' hidden md:flex' />
+</div>
+     <div className='flex md:justify-between justify-center flex-wrap'>
+      <ShimmerCircularImage size={90} />
+      <ShimmerCircularImage size={90} />
+      <ShimmerCircularImage size={90} />
+      <ShimmerCircularImage size={90} className='hidden md:flex'/>
+      <ShimmerCircularImage size={90}  className='hidden md:flex'/>
+      <ShimmerCircularImage size={90}  className='hidden md:flex'/>
+      <ShimmerCircularImage size={90}  className='hidden md:flex'/>
+      <ShimmerCircularImage size={90}  className='hidden md:flex' />
+      <ShimmerCircularImage size={90} className=' hidden md:flex' />
         
      </div>
 
      <div >
    
-   <div className=' flex flex-wrap gap-5 '>
-    <div className='w-[280px] '><ShimmerPostItem card title cta /></div>
-    <div className='w-[280px] '><ShimmerPostItem card title cta /></div>
-    <div className='w-[280px] '><ShimmerPostItem card title cta /></div>
-    <div className='w-[280px] '><ShimmerPostItem card title cta /></div>
-    <div className='w-[280px] '><ShimmerPostItem card title cta /></div>
-    <div className='w-[280px] '><ShimmerPostItem card title cta /></div>
-    <div className='w-[280px] '><ShimmerPostItem card title cta /></div>
-    <div className='w-[280px] '><ShimmerPostItem card title cta /></div>
+   <div className=' flex flex-wrap gap-5 justify-center'>
+    <div className='w-[230px] md:w-[280px] '><ShimmerPostItem card title cta /></div>
+    <div className='w-[230px] md:w-[280px]'><ShimmerPostItem card title cta /></div>
+    <div className='w-[230px] md:w-[280px]'><ShimmerPostItem card title cta /></div>
+    <div className='w-[230px] md:w-[280px]'><ShimmerPostItem card title cta /></div>
+    <div className='w-[230px] md:w-[280px]'><ShimmerPostItem card title cta /></div>
+    <div className='w-[230px] md:w-[280px]'><ShimmerPostItem card title cta /></div>
+    <div className='w-[230px] md:w-[280px]'><ShimmerPostItem card title cta /></div>
+    <div className='w-[230px] md:w-[280px]'><ShimmerPostItem card title cta /></div>
 
    </div>
 

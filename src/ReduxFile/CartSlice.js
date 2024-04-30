@@ -23,7 +23,6 @@ const CartSlice=createSlice({
             let Findindex=state.cartitem.findIndex(item=>item?.card?.info?.id===action?.payload?.card?.info?.id);
             state.cartitem[Findindex].amount==15? state.cartitem[Findindex].amount=15 :state.cartitem[Findindex].amount+=1
 
-            state.total=state.amount*state.cartitem[Findindex].card?.info?.price/100
 
        },
        decrease(state,action){

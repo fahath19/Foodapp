@@ -21,7 +21,7 @@ const OrderMenuinfo = ({Menuinfo}) => {
 
     <div className=' px-10  '>
       <h2 className='text-[1.3rem] font-bold mt-4'>{costForTwoMessage}</h2>
-      <div className='w-[350px] h-[250px] mt-6  border-[1px] rounded-lg border-slate-300'>
+      <div className='md:w-[350px] h-[250px] mt-6  border-[1px] rounded-lg border-slate-300'>
       <img src={IMG_PRE_SEARCH_URL+cloudinaryImageId} alt="img" className='w-[100%] h-[100%] object-cover rounded-lg ' />  
 
       </div>
