@@ -8,15 +8,8 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 console.log(getdata?.data?.cards[0]);
 
- console.log(getdata?.data?.cards[0]?.card?.card?.imageGridCards?.info[0]?.action?.text);
- 
-console.log(getdata?.data?.cards[0]?.card?.card?.imageGridCards?.info[0]?.imageId);
-
-
-  <li key={item.id}>{item.action.text}
-          <img src={IMG_PRE_SEARCH_URL+item?.imageId} alt="df" className='w-[140px]' />
-           </li>
-
-           {data.info.map(item => (
-        <li></li>
-        ))}
+ ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <Body />
+  </React.StrictMode>,
+)

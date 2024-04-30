@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
-import { topresturant } from '../utils/c1';
 import { GoArrowRight,GoArrowLeft } from "react-icons/go";
 import Topresturantinfo from './Topresturantinfo';
-const Topresturant = () => {
+const Topresturant = ({Use_Fetch_Swiggy_Api}) => {
   let [slide,setslide]= useState(0);
-   let {title}=topresturant[0]?.card?.card?.header;
-   let {restaurants}=topresturant[0]?.card?.card?.gridElements?.infoWithStyle;
+
+   if(!Use_Fetch_Swiggy_Api){
+         return ''
+   }
+   let {title}= Use_Fetch_Swiggy_Api?.data?.cards[1]?.card?.card?.header
+   let {restaurants}=Use_Fetch_Swiggy_Api?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
 
   return (
     <div >

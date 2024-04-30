@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { headerdata } from '../Mockdata'
-import { IoIosSearch } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 const Header = () => {
   let [show,setshow]=useState(1);
+  const data=useSelector((store)=>store.Cart.amount);
   
   function handleburger(){
        setshow(!show)
@@ -18,12 +19,12 @@ const Header = () => {
            `}
            >
             
-                  {
-                    headerdata.map((item,index)=>
-                      <li key={index} className='text-[1.3rem] md:hover:text-orange-600 text-center font-medium md:pr-10 pr-0 cursor-pointer  text-[#343434] md:mt-auto mt-3  flex items-start justify-start hover:bg-orange-500 hover:text-white  w-[300px] md:hover:bg-transparent md:w-auto pl-4 rounded' > {item.navtext}   </li>  )
-                     
+                     <Link to='/b' > <li className='text-[1.3rem] md:hover:text-orange-600 text-center font-medium md:pr-10 pr-0 cursor-pointer  text-[#343434] md:mt-auto mt-3  flex items-start justify-start hover:bg-orange-500 hover:text-white  w-[300px] md:hover:bg-transparent md:w-auto pl-4 rounded' >  Search  </li> </Link>  
+                     <Link to='/b' > <li className='text-[1.3rem] md:hover:text-orange-600 text-center font-medium md:pr-10 pr-0 cursor-pointer  text-[#343434] md:mt-auto mt-3  flex items-start justify-start hover:bg-orange-500 hover:text-white  w-[300px] md:hover:bg-transparent md:w-auto pl-4 rounded' > Offers </li> </Link>  
+                     <Link to='/b' > <li className='text-[1.3rem] md:hover:text-orange-600 text-center font-medium md:pr-10 pr-0 cursor-pointer  text-[#343434] md:mt-auto mt-3  flex items-start justify-start hover:bg-orange-500 hover:text-white  w-[300px] md:hover:bg-transparent md:w-auto pl-4 rounded' > Help </li> </Link>  
+                     <Link to='/Cartpage' > <li className='text-[1.3rem] md:hover:text-orange-600 text-center font-medium md:pr-10 pr-0 cursor-pointer  text-[#343434] md:mt-auto mt-3  flex items-start justify-start hover:bg-orange-500 hover:text-white  w-[300px] md:hover:bg-transparent md:w-auto pl-4 rounded' > Cart ({data}) </li> </Link>  
+                    
                   
-                  }
               
 
           </ul>
@@ -34,12 +35,3 @@ const Header = () => {
 }
 
 export default Header
-//Snackify 
-{/* <li>Search</li>
-                    <li>Offers</li>
-                    <li>Help</li>
-                    <li>Sign In</li>
-                    <li>Cart</li>
-                  
-                  
-                  */}

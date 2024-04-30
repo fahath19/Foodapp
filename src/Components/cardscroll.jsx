@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import Usefetchdata from '../customhook/Usefetchdata';
-import { URL,IMG_INFO_URL,IMG_SEARCH_URL,IMG_PRE_SEARCH_URL,data1 } from '../utils/constant';
-import Loading from './Loading';
+import { IMG_PRE_SEARCH_URL } from '../utils/constant';
 import { GoArrowRight,GoArrowLeft } from "react-icons/go";
 
-const cardscroll = () => {
+const cardscroll = ({Use_Fetch_Swiggy_Api}) => {
   let [slide,setslide]=useState(0)
-  let getdata = Usefetchdata();
-  const data = getdata?.data?.cards[0]?.card?.card?.imageGridCards;
-  const title=getdata?.data?.cards[0]?.card?.card?.header.title;
+  const data = Use_Fetch_Swiggy_Api?.data?.cards[0]?.card?.card?.imageGridCards;
+  const title=Use_Fetch_Swiggy_Api?.data?.cards[0]?.card?.card?.header.title;
  
   if (!title || !data || !Array.isArray(data.info) ) {
-   return <Loading />;
+   return '';
   }
   function rightclick(){
     if(data?.info?.length-5==slide) return false

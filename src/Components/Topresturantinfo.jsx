@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { URL,IMG_INFO_URL,IMG_SEARCH_URL,IMG_PRE_SEARCH_URL,data1 } from '../utils/constant';
+import React from 'react'
+import { IMG_INFO_URL} from '../utils/constant';
 
 const Topresturantinfo = ({restaurants,slide}) => {
    
   return (
     <div className='topresinfo mt-6   flex  overflow-hidden overflow-x-auto  '>
       {
-        restaurants.map(item=>
+        restaurants?.map(item=>
            <div key={item?.info?.id} className='resturantinfo1  w-[300px] md:w-[350px]  mx-6  cursor-pointer' style={{transform:`translateX(-${slide*100}%)`}} >
             <div className='w-[260px] md:w-[300px] '>
             <img src={IMG_INFO_URL+item?.info?.cloudinaryImageId} alt="img" className='w-[100%] object-cover bg-contain rounded-[5%] h-[180px]' />
