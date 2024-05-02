@@ -20,7 +20,7 @@ const Topresturant = ({Use_Fetch_Swiggy_Api}) => {
            <div className='bg-[#d5d4d4] p-[8px] md:p-2 cursor-pointer rounded-[50%] mr-2 ' onClick={()=>{ setslide(slide-1)}} > 
            <GoArrowLeft className='text-[1.3rem] md:text-2xl'  />
            </div>
-           <div className='bg-[#d5d4d4]  p-[8px] md:p-2 cursor-pointer rounded-[50%] mr-2' onClick={()=>{if(restaurants.length-1==slide-1) return false; setslide(slide+1); console.log(slide)}} >
+           <div className='bg-[#d5d4d4]  p-[8px] md:p-2 cursor-pointer rounded-[50%] mr-2' onClick={()=>{if(restaurants?.length-1==slide-1) return false; setslide(slide+1); console.log(slide)}} >
             <GoArrowRight className='text-[1.3rem] md:text-2xl'/>
             </div>
           </div>

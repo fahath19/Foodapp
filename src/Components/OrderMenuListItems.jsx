@@ -23,8 +23,8 @@ const OrderMenuListItems = ({filtercategories,click,i}) => {
         <div key={ items?.card?.info?.id} className= {`border-b-2 pb-5 mt-4 mb-2 flex justify-between  ${click==i?'block':'hidden'}  `}> 
             <div>
              <h2>{ items?.card?.info?.name}</h2>
-             <h2>{items?.card?.info?.price/100}</h2>
-             <h2 className='w-[80%]'>{(items?.card?.info?.description.length>31) ? items?.card?.info?.description.substring(0,40)+'....':items?.card?.info?.description}</h2>
+             <h2>₹{items?.card?.info?.price/100 || 259} </h2>
+             <h2 className='w-[80%]'>{(items?.card?.info?.description?.length>31) ? items?.card?.info?.description.substring(0,40)+'....':items?.card?.info?.description}</h2>
 
             </div>
          <div className='w-[120px] md:w-[150px] h-[130px] border-2 border-slate-100 rounded-[10px] relative'>
@@ -45,3 +45,4 @@ const OrderMenuListItems = ({filtercategories,click,i}) => {
 
 export default OrderMenuListItems
 
+// || items?.card?.info?.costForTwo

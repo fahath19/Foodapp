@@ -11,7 +11,7 @@ const CartIMenu = () => {
   const {total}=useSelector(store=>store?.Cart)
 
 
-  if (cartitem.length == 0) {
+  if (cartitem?.length == 0) {
     return <div className=' mx-auto'>
       <div className='w-[300px] mx-auto'>
       <img src={CartEmty} alt="" className='w-[100%]'/>
@@ -37,8 +37,8 @@ const CartIMenu = () => {
     <div className='max-w-[700px] flex flex-col items-between mx-auto mt-10 px-20 mb-10'>
       <button className='bg-black text-white p-2 font-semibold ' onClick={() => dispatch(clearitem())}>Clear Cart</button>
       {cartitem.map(items =>
-        <div className='border-[3px] py-3 mt-4 max-w-[700px] '>
-          <div className='flex items-center justify-around '>
+        <div className='border-[3px] py-3 mt-2 bg max-w-[700px] min-w-[275px]  '>
+          <div className='flex flex-col md:flex-row items-center justify-around '>
             <div className=' flex   ml-4'>
             <div className='w-[80px] h-[50px] mx-auto border-2 border-black'>
                 <img src={IMG_PRE_SEARCH_URL + items?.card?.info?.imageId} alt="" className='w-[100%] object-cover h-[100%]' />
@@ -46,15 +46,15 @@ const CartIMenu = () => {
               </div>
               <div className='ml-4  w-[180px]'>
               <h2 className=' text-[1.1rem] font-sans font-semibold'>{items?.card?.info?.name}</h2>
-              <h2 className='text-[1.1rem] font-medium text-green-600'>Price: ₹{items?.card?.info?.price / 100}</h2>
+              <h2 className='text-[1.1rem] font-medium text-green-600'>Price: ₹{items?.card?.info?.price / 100 || 259} </h2>
 
               </div>
 
             </div>
-            <div className=' flex flex-col   '>
+            <div className=' flex  items-center   '>
 
             
-              <div className='text-center flex mt-2'>
+              <div className='text-center flex md:mt-[10px] mt-[20px]'>
                 <button className='mx-auto text-[1.4rem] mr-2' onClick={() => Increment(items)}><FaPlusCircle /></button>
                 <h2 className='text-[1.5rem] font-semibold mx-auto border-2 border-black w-[35px] h-[40px] text-red-600 '>{items.amount}</h2>
                 <button className='mx-auto text-[1.4rem] ml-2' onClick={() => decrement(items)}> <FaMinusCircle /> </button>
@@ -62,19 +62,35 @@ const CartIMenu = () => {
               </div>
 
 
-            </div>
-            <div>
-            <h2 className='text-[1.2rem] font-semibold '> ₹{items?.card?.info?.price / 100*items.amount} || {total}</h2>
+              <h2 className='text-[1.2rem] font-semibold ml-10  mt-2'> ₹{(items.amount*(items?.card?.info?.price  / 100 || 259) ).toFixed(2)} || {total} </h2>
 
             </div>
+           
           </div>
         </div>
       )}
-      <div className='border-2'>
+       <div className='bg-slate-200 px-3 pr-6'>
+                 <h2 className='text-[1.1rem] md:text-[1.3rem] font-semibold '>Bill Details</h2>
+                 <div className='flex justify-between'>
+                 <h2 className='text-[1.1rem] md:text-[1.2rem] font-normal text-slate-700 '>Item Total</h2>
+                  <h2 className=''>₹{(total).toFixed(2)}</h2>
+                 </div>
+                 <div className='flex justify-between'>
+                 <h2 className='text-[1.1rem] md:text-[1.2rem] font-normal text-slate-700 '>Delivery Fees</h2>
+                   <h2>₹40</h2>
+                 </div>
+                 <div className='flex justify-between border-black border-b-4 pb-1'>
 
-
-      </div>
-
+                 <h2 className='text-[1rem] md:text-[1.2rem]  border-b-4  font-normal text-slate-700 '>Gst and Resturant Charges </h2>
+                 <h2>₹100</h2>
+                 </div>
+                 <div className='flex justify-between mt-3 pb-4' >
+                 <h2 className='text-[1.1rem] md:text-[1.2rem] font-normal text-slate-700 '>To Pay</h2>
+                 <h2> ₹{(total+100+40).toFixed(2)}</h2>
+                 </div>
+                 
+        </div> 
+        <button className='bg-green-300 h-[50px]' onClick={()=>dispatch(clearitem())}>Pay Now</button>
     </div>
   )
 }

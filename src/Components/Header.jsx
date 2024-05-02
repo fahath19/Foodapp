@@ -14,7 +14,7 @@ const Header = () => {
         <header className=' bg-[#FAF9F6] shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-5   w-full z-20 '>
           <div className='max-w-[1200px] mx-auto flex justify-between'> 
            <h2 className='text-3xl text-yellow-400 font-sans ml-6 md:text-4xl'>snackify</h2>
-           <ul className={`flex direction-auto md:flex-row flex-col  text-center md:pb-auto pb-4  z-20  mt-2 items-center  md:relative absolute md:top-0  top-[10%] md:bg-transparent bg-[#FAF9F6] md:h-auto h-[230px] w-full md:w-auto md:flex ${show?'flex':'hidden'}
+           <ul className={`flex direction-auto md:flex-row flex-col  text-center md:pb-auto pb-4  z-20  mt-2 items-center  md:relative absolute md:top-0  top-[10%] md:bg-transparent bg-[#FAF9F6] md:h-auto h-[230px] w-full md:w-auto md:flex ${show?'hidden':'show'}
            
            `}
            >
