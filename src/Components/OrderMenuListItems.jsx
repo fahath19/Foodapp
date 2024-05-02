@@ -20,7 +20,10 @@ const OrderMenuListItems = ({filtercategories,click,i}) => {
     <div>
        {
        filtercategories?.card?.card?.itemCards.map(items=>
-        <div key={ items?.card?.info?.id} className= {`border-b-2 pb-5 mt-4 mb-2 flex justify-between  ${click==i?'block':'hidden'}  `}> 
+        {
+
+          return      (click==i)  &&
+        <div key={ items?.card?.info?.id} className= {`border-b-2 pb-5 mt-4 mb-2 flex justify-between  `}> 
             <div>
              <h2>{ items?.card?.info?.name}</h2>
              <h2>₹{items?.card?.info?.price/100 || 259} </h2>
@@ -34,8 +37,8 @@ const OrderMenuListItems = ({filtercategories,click,i}) => {
 
 
          </div>
-        </div>
-
+          </div>
+        }
        )
        }
       
