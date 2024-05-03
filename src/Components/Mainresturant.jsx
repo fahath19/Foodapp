@@ -1,5 +1,6 @@
 import React from 'react'
 import { IMG_INFO_URL } from '../utils/constant';
+import { IoStar } from "react-icons/io5";
 const Mainresturant = ({items}) => {
   return (
         
@@ -11,8 +12,8 @@ const Mainresturant = ({items}) => {
                <div className='px-3'>
                   <h2 className='text-[1.2rem] font-semibold'>{ items?.info?.name}</h2>
                   <div className='flex '>
-                  <h2 className='mr-3 text-[1.1rem] font-medium'>{items?.info?.avgRating}</h2>
-                  <h2 className='text-[1.1rem] font-medium'>{items?.info?.sla?.slaString}</h2>
+                  <h2 className='mr-1 text-[1.1rem] font-medium flex items-center '><span> <IoStar className='text-green-700'/></span> {items?.info?.avgRating}</h2>
+                  <h2 className='text-[1.1rem] ml-4 font-medium'><span className='font-bold '> .</span> {items?.info?.sla?.slaString}</h2>
 
 
                   </div>
