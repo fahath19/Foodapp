@@ -38,7 +38,7 @@ const cardscroll = ({Use_Fetch_Swiggy_Api}) => {
       </div>
       </div>
 
-       <div className=' cardscroll flex w-[310px] md:w-auto max-w-[1200px] mx-auto p-2  border-b-2 mt-[]  justify-center  overflow-hidden overflow-x-auto '>
+       <div className=' cardscroll flex w-[310px] md:w-auto max-w-[1200px] mx-auto p-2  border-b-2 mt-[]  justify-center  overflow-hidden overflow-x-auto resturantinfo1'>
 
           {
             data?.info?.map(item=>

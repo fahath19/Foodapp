@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { GoArrowRight,GoArrowLeft } from "react-icons/go";
 import Topresturantinfo from './Topresturantinfo';
+import { Link } from 'react-router-dom';
 const Topresturant = ({Use_Fetch_Swiggy_Api}) => {
   let [slide,setslide]= useState(0);
 
@@ -26,8 +27,16 @@ const Topresturant = ({Use_Fetch_Swiggy_Api}) => {
           </div>
         </div>
       </div>
-        <div className='w-[320px] md:max-w-[1200px] border-b-2 pb-2 md:w-auto mx-auto  '>
-        <Topresturantinfo restaurants={restaurants} slide={slide}/>
+        <div className='w-[320px] md:max-w-[1200px] border-b-2 pb-2 md:w-auto mx-auto  flex overflow-hidden  overflow-x-auto topresinfo'>
+
+        {
+          restaurants.map(item=>
+            <div className='' key={item?.info?.id}>
+         <Link to={`orderpage/${item?.info?.id}`} >     <Topresturantinfo restaurants={item} slide={slide} />    </Link> 
+
+            </div>
+          )
+        }
 
         </div>
 

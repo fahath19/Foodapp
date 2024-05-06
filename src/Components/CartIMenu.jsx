@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { IMG_PRE_SEARCH_URL } from '../utils/constant'
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
-import { clearitem,increase,decrease } from '../ReduxFile/CartSlice';
+import { clearitem,increase,decrease, totalfuc } from '../ReduxFile/CartSlice';
 import CartEmty from '../assets/Cart-empty.png'
 
 const CartIMenu = () => {
   const dispatch = useDispatch()
-  const cartitem=useSelector(store=>store?.Cart?.cartitem)
-  const {total}=useSelector(store=>store?.Cart)
+  const {cartitem,total}=useSelector(store=>store?.Cart);
 
+  useEffect(()=>{
+       dispatch(totalfuc())
+  },[cartitem])
+
+   
 
   if (cartitem?.length == 0) {
     return <div className=' mx-auto'>
@@ -17,7 +21,7 @@ const CartIMenu = () => {
       <img src={CartEmty} alt="" className='w-[100%]'/>
 
       </div>
-         <h2 className='text-center'>YOUR CART IS EMTY</h2>
+         <h2 className='text-center text-[1.5rem] capitalize'>YOUR CART IS EMTY</h2>
 
     </div>
     
@@ -62,35 +66,35 @@ const CartIMenu = () => {
               </div>
 
 
-              <h2 className='text-[1.2rem] font-semibold ml-10  mt-2'> ₹{(items.amount*(items?.card?.info?.price  / 100 || 259) ).toFixed(2)} || {total} </h2>
+              <h2 className='text-[1.2rem] font-semibold ml-10  mt-2'> ₹{(items.amount*(items?.card?.info?.price  / 100 || 259) ).toFixed(2)}  </h2>
 
             </div>
            
           </div>
         </div>
       )}
-       <div className='bg-slate-200 px-3 pr-6'>
-                 <h2 className='text-[1.1rem] md:text-[1.3rem] font-semibold '>Bill Details</h2>
+       <div className='bg-black px-3 pr-6 max-w-[700px] min-w-[275px]'>
+                 <h2 className='text-[1.1rem] md:text-[1.3rem] font-semibold text-white '>Bill Details</h2>
                  <div className='flex justify-between'>
-                 <h2 className='text-[1.1rem] md:text-[1.2rem] font-normal text-slate-700 '>Item Total</h2>
-                  <h2 className=''>₹{(total).toFixed(2)}</h2>
+                 <h2 className='text-[1.1rem] md:text-[1.2rem] font-normal text-white '>Item Total</h2>
+                  <h2 className='text-white'>₹{(total).toFixed(2)}</h2>
                  </div>
                  <div className='flex justify-between'>
-                 <h2 className='text-[1.1rem] md:text-[1.2rem] font-normal text-slate-700 '>Delivery Fees</h2>
-                   <h2>₹40</h2>
+                 <h2 className='text-[1.1rem] md:text-[1.2rem] font-normal text-white '>Delivery Fees</h2>
+                   <h2 className='text-white'>₹40</h2>
                  </div>
-                 <div className='flex justify-between border-black border-b-4 pb-1'>
+                 <div className='flex justify-between border-white border-b pb-1'>
 
-                 <h2 className='text-[1rem] md:text-[1.2rem]  border-b-4  font-normal text-slate-700 '>Gst and Resturant Charges </h2>
-                 <h2>₹100</h2>
+                 <h2 className='text-[1rem] md:text-[1.2rem]   pb-2 font-normal text-white '>Gst and Resturant Charges </h2>
+                 <h2 className='text-white'>₹100</h2>
                  </div>
                  <div className='flex justify-between mt-3 pb-4' >
-                 <h2 className='text-[1.1rem] md:text-[1.2rem] font-normal text-slate-700 '>To Pay</h2>
-                 <h2> ₹{(total+100+40).toFixed(2)}</h2>
+                 <h2 className='text-[1.1rem] md:text-[1.2rem] font-normal text-white '>To Pay</h2>
+                 <h2 className='text-white'> ₹{(total+100+40).toFixed(2)}</h2>
                  </div>
                  
         </div> 
-        <button className='bg-green-300 h-[50px]' onClick={()=>dispatch(clearitem())}>Pay Now</button>
+        <button className='bg-green-300 h-[50px] max-w-[700px] min-w-[275px]' onClick={()=>dispatch(clearitem())}>Pay Now</button>
     </div>
   )
 }

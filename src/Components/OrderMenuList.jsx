@@ -3,6 +3,9 @@ import { MdKeyboardArrowDown,MdKeyboardArrowUp } from "react-icons/md";
 import OrderMenuListItems from './OrderMenuListItems';
 const OrderMenuList = ({MenuList}) => {
       let [click,setclick]=  useState(0)
+      if(!MenuList){
+        return 'something problem please wait';
+      }
    const {cards}=MenuList?.groupedCard?.cardGroupMap?.REGULAR;
    let filtercategories=cards.filter(item=>item?.card?.card?.['@type']=="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
 
