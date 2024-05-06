@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { IMG_INFO_URL } from '../utils/constant'
 import { useDispatch, useSelector } from 'react-redux'
 import { additem } from '../ReduxFile/CartSlice';
+import { ToastContainer ,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const OrderMenuListItems = ({filtercategories,click,i}) => {
     const dispatch=useDispatch()
     // let [setFilteramount]=useState();
@@ -11,7 +13,7 @@ const OrderMenuListItems = ({filtercategories,click,i}) => {
     function Addcart(items){
      
       dispatch(additem(items))     
-      
+      toast.success('succefully added')
  
      }
  
@@ -38,7 +40,9 @@ const OrderMenuListItems = ({filtercategories,click,i}) => {
             
              <button className='text-[1rem] md:text-[1.2rem] text-white  bg-green-600 w-[80px] md:w-[100px] h-[35px]  absolute -bottom-1   md:bottom-[-6px] rounded-full md:right-5  right-[18px] ' onClick={()=>Addcart(items)} >  Add {cartitem?.map(item=>(item?.card?.info?.id===items?.card?.info?.id)? `(${item.amount})`:'')}  </button>
 
-
+             <ToastContainer position="top-center"
+  reverseOrder={false}/>
+            
          </div>
           </div>
         }

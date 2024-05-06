@@ -4,7 +4,9 @@ import { IMG_PRE_SEARCH_URL } from '../utils/constant'
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import { clearitem,increase,decrease, totalfuc } from '../ReduxFile/CartSlice';
 import CartEmty from '../assets/Cart-empty.png'
-
+import { Link } from 'react-router-dom';
+import { ToastContainer ,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const CartIMenu = () => {
   const dispatch = useDispatch()
   const {cartitem,total}=useSelector(store=>store?.Cart);
@@ -21,7 +23,10 @@ const CartIMenu = () => {
       <img src={CartEmty} alt="" className='w-[100%]'/>
 
       </div>
-         <h2 className='text-center text-[1.5rem] capitalize'>YOUR CART IS EMTY</h2>
+         <h2 className='text-center text-[1.5rem] '>Your Cart Is Emty</h2>
+        <Link to='/'>
+        <button className=' text-[1.4rem] mx-auto bg-orange-400 block w-[230px] py-2  my-3 font-sans'>See all Restruant</button>
+        </Link>  
 
     </div>
     
@@ -31,10 +36,12 @@ const CartIMenu = () => {
   
     dispatch(increase(items))
     
-
+      toast.success('Your item is added')
   }
   function decrement(items) {
     dispatch( decrease ( items ) )
+    toast.error("Your item is removed")
+
   }
   return (
     
@@ -60,8 +67,10 @@ const CartIMenu = () => {
             
               <div className='text-center flex md:mt-[10px] mt-[20px]'>
                 <button className='mx-auto text-[1.4rem] mr-2' onClick={() => Increment(items)}><FaPlusCircle /></button>
+
                 <h2 className='text-[1.5rem] font-semibold mx-auto border-2 border-black w-[35px] h-[40px] text-red-600 '>{items.amount}</h2>
                 <button className='mx-auto text-[1.4rem] ml-2' onClick={() => decrement(items)}> <FaMinusCircle /> </button>
+                <ToastContainer/>
 
               </div>
 
