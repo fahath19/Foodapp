@@ -11,12 +11,12 @@ const OrderMenuListItems = ({filtercategories,click,i}) => {
     console.log(cartitem?.map(item=>console.log(item.amount)));
 
     function Addcart(items){
-     
-      dispatch(additem(items))     
       toast.success('succefully added')
+      dispatch(additem(items))     
+       
  
      }
- 
+   
 
   return (
     <div>
@@ -40,8 +40,7 @@ const OrderMenuListItems = ({filtercategories,click,i}) => {
             
              <button className='text-[1rem] md:text-[1.2rem] text-white  bg-green-600 w-[80px] md:w-[100px] h-[35px]  absolute -bottom-1   md:bottom-[-6px] rounded-full md:right-5  right-[18px] ' onClick={()=>Addcart(items)} >  Add {cartitem?.map(item=>(item?.card?.info?.id===items?.card?.info?.id)? `(${item.amount})`:'')}  </button>
 
-             <ToastContainer position="top-center"
-  reverseOrder={false}/>
+            
             
          </div>
           </div>

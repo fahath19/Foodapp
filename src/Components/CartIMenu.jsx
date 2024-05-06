@@ -45,7 +45,7 @@ const CartIMenu = () => {
   }
   return (
     
-    <div className='max-w-[700px] flex flex-col items-between mx-auto mt-10 px-20 mb-10'>
+    <div className='max-w-[700px] flex flex-col items-between mx-auto mt-10 px-10 mb-10'>
       <button className='bg-black text-white p-2 font-semibold ' onClick={() => dispatch(clearitem())}>Clear Cart</button>
       {cartitem.map(items =>
         <div className='border-[3px] py-3 mt-2 bg max-w-[700px] min-w-[275px]  '>
@@ -70,12 +70,11 @@ const CartIMenu = () => {
 
                 <h2 className='text-[1.5rem] font-semibold mx-auto border-2 border-black w-[35px] h-[40px] text-red-600 '>{items.amount}</h2>
                 <button className='mx-auto text-[1.4rem] ml-2' onClick={() => decrement(items)}> <FaMinusCircle /> </button>
-                <ToastContainer/>
 
               </div>
 
 
-              <h2 className='text-[1.2rem] font-semibold ml-10  mt-2'> ₹{(items.amount*(items?.card?.info?.price  / 100 || 259) ).toFixed(2)}  </h2>
+              <h2 className='text-[1.2rem] font-semibold ml-10  mt-2 w-[100px]  '> ₹{(items.amount*(items?.card?.info?.price  / 100 || 259) ).toFixed(2)}  </h2>
 
             </div>
            
