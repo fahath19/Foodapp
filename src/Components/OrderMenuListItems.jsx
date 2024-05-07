@@ -53,5 +53,3 @@ const OrderMenuListItems = ({filtercategories,click,i}) => {
 }
 
 export default OrderMenuListItems
-
-// || items?.card?.info?.costForTwo

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { IMG_PRE_SEARCH_URL } from '../utils/constant';
 import { GoArrowRight,GoArrowLeft } from "react-icons/go";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { settings } from '../utils/constant';
 const cardscroll = ({Use_Fetch_Swiggy_Api}) => {
   let [slide,setslide]=useState(0)
   const data = Use_Fetch_Swiggy_Api?.data?.cards[0]?.card?.card?.imageGridCards;
@@ -38,16 +41,17 @@ const cardscroll = ({Use_Fetch_Swiggy_Api}) => {
       </div>
       </div>
 
-       <div className=' cardscroll flex w-[310px] md:w-auto max-w-[1200px] mx-auto p-2  border-b-2 mt-[]  justify-center  overflow-hidden overflow-x-auto resturantinfo1'>
+       <div className=' cardscroll flex w-[360px] md:w-auto max-w-[1200px] mx-auto p-2  border-b-2   justify-center  overflow-hidden overflow-x-auto resturantinfo1'>
 
           {
             data?.info?.map(item=>
-              <div className='cardscrollitem mr-5 w-[152px]  shrink-0' style={{transform:`translateX(740%)`}} key={item?.id}>
+              <div className='cardscrollitem -mr-[24px] md:mr-[20px] w-[152px] shrink-0' style={{transform:`translateX(740%)`}} key={item?.id}>
               <img src={IMG_PRE_SEARCH_URL+item?.imageId} alt="df" className=' transition-all' key={item.id} style={{transform:`translateX(-${slide*100}%)`}}/>
 
               </div>
             )
           }
+
        </div>
        </div>
 

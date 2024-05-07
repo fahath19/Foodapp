@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  padding-top: 8%;
+}
 .resturantinfo1,.resturantinfo {
   transition: all 0.5s ease-in-out;
   
@@ -47,6 +50,10 @@
 
 
 @media only screen and (max-width: 600px) {
+  
+body{
+  padding-top: 12%;
+}
   .filterbtn{
     display: flex;
     overflow-y: hidden;
@@ -68,4 +75,5 @@
   .filterbtn input{
     height: 35px;
   }
+ 
 }

@@ -11,7 +11,7 @@ import Appstore from './ReduxFile/Appstore'
 import { Provider } from 'react-redux'
 import CartMenu from './Components/CartIMenu'
 import ShrimmerUi1 from './Shrimmer/ShrimmerUi1'
-
+import Shrimmer2 from './Shrimmer/shrimmer2'
 const Layout=()=>{
    return(
     < Provider store={Appstore}>
@@ -34,7 +34,7 @@ const router=createBrowserRouter([{
     },
     {
       path:'/b',
-      element:<ShrimmerUi1/>
+      element:<Shrimmer2/>
     },
     {
       path:'/orderpage/:resid',

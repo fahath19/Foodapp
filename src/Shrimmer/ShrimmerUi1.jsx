@@ -21,13 +21,9 @@ const ShrimmerUi1 = () => {
      <div className='flex md:justify-between justify-center items-center mx-auto flex-wrap'>
       <ShimmerCircularImage size={90} />
       <ShimmerCircularImage size={90} />
-      <ShimmerCircularImage size={90} className=''/>
-      <ShimmerCircularImage size={90} className=' invisible hidden  md:flex     md:visible '/>
-      <ShimmerCircularImage size={90}  className='invisible hidden  md:flex    md:visible'/>
-      <ShimmerCircularImage size={90}  className='invisible hidden  md:flex   md:visible'/>
-      <ShimmerCircularImage size={90}  className='invisible hidden  md:flex   md:visible'/>
-      <ShimmerCircularImage size={90}  className='invisible hidden  md:flex   md:visible' />
-      <ShimmerCircularImage size={90} className='invisible  hidden  md:flex   md:visible' />
+      <ShimmerCircularImage size={90} className='pl-2'/>
+      <ShimmerCircularImage size={90} className='  pl-2'/>
+      
         
      </div>
 

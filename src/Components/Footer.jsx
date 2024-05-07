@@ -26,7 +26,7 @@ const Footer = () => {
              </div>
              </div>
            <div className='text-white text-center mt-10'>
-              <p className='text-[1rem] lg:text-[1.2rem] font-bold text-slate-200'>Created By Abdul Bahad</p>
+              <p className='text-[1rem] lg:text-[1.2rem] font-bold text-slate-200'>Created By ❤️ Abdul Bahad</p>
               <p className='lg:[1rem]  lg:text-[1.2rem] font-bold text-slate-200'>Email - Bahadabdul539@gmail.com</p>
  
           </div>
