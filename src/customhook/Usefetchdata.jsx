@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { api_url } from '../utils/constant';
+import { api_url, imgnotfoundurl } from '../utils/constant';
 const Usefetchdata = () => {
      let [data,setdata]=useState('');
      useEffect(()=>{
@@ -12,7 +12,10 @@ const Usefetchdata = () => {
           const result = await response?.json();
           setdata(result);
      } catch (error) {
-          console.error(error);
+          return <div>    <img src={imgnotfoundurl} className='w-[300px]' />
+                       <h2>{error}</h2>
+          
+             </div>
      }
 }
 

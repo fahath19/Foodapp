@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { IMG_PRE_SEARCH_URL } from '../utils/constant';
 import { GoArrowRight,GoArrowLeft } from "react-icons/go";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { settings } from '../utils/constant';
 const cardscroll = ({Use_Fetch_Swiggy_Api}) => {
   let [slide,setslide]=useState(0)
   const data = Use_Fetch_Swiggy_Api?.data?.cards[0]?.card?.card?.imageGridCards;

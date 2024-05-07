@@ -19,10 +19,13 @@ const UseOrder = (resid) => {
        setdata(json);
     }
    
-    catch(err){
-       console.log(err);
-    }
+    catch (error) {
+      return <div>    <img src={imgnotfoundurl} className='w-[300px]' />
+                   <h2>{error}</h2>
+      
+         </div>
    }
+}
    return data;
 }
 
