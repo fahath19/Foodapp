@@ -21,7 +21,9 @@ body{
   border-radius: 20px;
   width: 130px;
   height: 40px;
-   background-color: rgb(233, 230, 230);
+   /* background-color: rgb(233, 230, 230);
+  */
+     color: white;
    border: solid 1px rgb(205, 203, 203);
    margin-right: 10px;
    
@@ -36,7 +38,7 @@ body{
    margin-right: 10px;
 }
 .filterbtn button:hover{
-  background-color: rgb(191, 187, 187);
+  background-color: rgb(130, 125, 125);
 
 }
 .home p,.company p,.social p{
@@ -48,6 +50,12 @@ body{
   width: 0;
 }
 
+@layer components{
+    
+ .filterbtn >button{
+       
+ }
+}
 
 @media only screen and (max-width: 600px) {
   

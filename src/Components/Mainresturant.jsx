@@ -4,7 +4,7 @@ import { IoStar } from "react-icons/io5";
 const Mainresturant = ({items}) => {
   return (
         
-           <div key={items?.info?.id} className='resturantinfo w-[300px] md:w-[280px]  md:mx-1  cursor-pointer mt-4' >
+           <div key={items?.info?.id} className=' mb-6 resturantinfo w-[300px] md:w-[280px]  md:mx-1  cursor-pointer mt-4' >
             <div className='w-[280px] md:w-[260px]  '>
             <img src={IMG_INFO_URL+items?.info?.cloudinaryImageId} alt="img" className='w-[100%] object-cover bg-contain rounded-[5%] h-[180px]' />
 

@@ -15,7 +15,7 @@ const Header = () => {
   }
 
   return (
-        <header className=' bg-[#FAF9F6] shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-5  fixed top-0 w-full z-20  '>
+        <header className=' bg-[#FAF9F6]  shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-5  fixed top-0 w-full z-20  '>
           <div className='max-w-[1200px] mx-auto flex justify-between'> 
            <h2 className='text-3xl text-orange-400 font-sans ml-6 md:text-4xl'>Snackify...</h2>
           
